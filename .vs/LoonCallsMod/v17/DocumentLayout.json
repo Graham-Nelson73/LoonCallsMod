@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|c:\\users\\graha\\source\\repos\\looncallsmod\\looncallsmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|solutionrelative:looncallsmod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|c:\\users\\graha\\source\\repos\\looncallsmod\\content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|solutionrelative:content.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|c:\\users\\graha\\source\\repos\\looncallsmod\\soundcue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|solutionrelative:soundcue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|c:\\users\\graha\\source\\repos\\looncallsmod\\modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|solutionrelative:modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|c:\\users\\graha\\source\\repos\\looncallsmod\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56C9F64C-5431-4E26-A7D9-442C4797C127}|LoonCallsMod.csproj|solutionrelative:manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "content.json",
+              "DocumentMoniker": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\content.json",
+              "RelativeDocumentMoniker": "content.json",
+              "ToolTip": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\content.json",
+              "RelativeToolTip": "content.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T00:44:02.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoonCallsMod.csproj",
+              "DocumentMoniker": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\LoonCallsMod.csproj",
+              "RelativeDocumentMoniker": "LoonCallsMod.csproj",
+              "ToolTip": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\LoonCallsMod.csproj",
+              "RelativeToolTip": "LoonCallsMod.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-14T00:36:57.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SoundCue.cs",
+              "DocumentMoniker": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\SoundCue.cs",
+              "RelativeDocumentMoniker": "SoundCue.cs",
+              "ToolTip": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\SoundCue.cs",
+              "RelativeToolTip": "SoundCue.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAADIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T01:56:51.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ModEntry.cs",
+              "DocumentMoniker": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\ModEntry.cs",
+              "RelativeDocumentMoniker": "ModEntry.cs",
+              "ToolTip": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\ModEntry.cs",
+              "RelativeToolTip": "ModEntry.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T00:30:17.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Manifest.json",
+              "DocumentMoniker": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\Manifest.json",
+              "RelativeDocumentMoniker": "Manifest.json",
+              "ToolTip": "C:\\Users\\graha\\source\\repos\\LoonCallsMod\\Manifest.json",
+              "RelativeToolTip": "Manifest.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-13T00:39:54.753Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
