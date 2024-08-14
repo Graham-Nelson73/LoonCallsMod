@@ -36,8 +36,8 @@ namespace LoonCallsMod
                 IsPlayerInCueLocation(location) &&
                 IsPlayerInCueSeason())
             {
-                var rand = rng.Next(1, Configuration.CallOdds + 1);
-                if (rand == 1 && time - LastCallTime >= Configuration.MinimumCallInterval)
+                var rand = rng.Next(0, Configuration.CallOdds);
+                if (rand == 0 && time - LastCallTime >= Configuration.MinimumCallInterval)
                 {
                     CueLoonCall(location);
                     LastCallTime = time;
