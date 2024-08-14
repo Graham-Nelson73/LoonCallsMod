@@ -94,7 +94,7 @@ namespace LoonCallsMod
 
         private bool IsPlayerInCueSeason()
         {
-            return Game1.CurrentSeasonDisplayName != "Winter";
+            return Game1.currentSeason.ToLower() != "winter";
         }
     }
 }
