@@ -18,9 +18,9 @@ namespace LoonCallsMod
         List<string> CueNames;
         Random rng;
 
-        const int CALL_START_TIME = 600;//6:00 pm
+        const int CALL_START_TIME = 1800;//6:00 pm
         const int CALL_END_TIME = 2400;//12:00 am
-        const int CALL_ODDS = 2;//1 in CALL_ODDS chance that call will be cued
+        const int CALL_ODDS = 3;//1 in CALL_ODDS chance that call will be cued
         const int MIN_CALL_INTERVAL = 10;//Minimum number of minutes between calls
 
         public SoundCue(Mod mod)
@@ -36,10 +36,10 @@ namespace LoonCallsMod
             var location = Game1.currentLocation;
             if (time >= CALL_START_TIME && time <= CALL_END_TIME &&
                 IsPlayerInCueLocation(location) &&
-                IsPlayerInCueSeason())//6:00 to 12:00
+                IsPlayerInCueSeason())
             {
                 var rand = rng.Next(1, CALL_ODDS + 1);
-                if (time / 10 % 2 == 0)//(rand == 1 && time - LastCallTime > MIN_CALL_INTERVAL)
+                if (rand == 1 && time - LastCallTime > MIN_CALL_INTERVAL)
                 {
                     CueLoonCall(location);
                     LastCallTime = time;
