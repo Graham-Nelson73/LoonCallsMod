@@ -1,8 +1,0 @@
-C:\Users\graha\source\repos\SDVModTest\bin\Debug\net6.0\SDVModTest.deps.json
-C:\Users\graha\source\repos\SDVModTest\bin\Debug\net6.0\SDVModTest.dll
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.csproj.AssemblyReference.cache
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.AssemblyInfoInputs.cache
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.AssemblyInfo.cs
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.csproj.CoreCompileInputs.cache
-C:\Users\graha\source\repos\SDVModTest\obj\Debug\net6.0\SDVModTest.dll
