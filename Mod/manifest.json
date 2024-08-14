@@ -1,9 +1,9 @@
 {
   "Name": "LoonCallsMod",
-  "Author": "Digg Bingus",
-  "Version": "1.0.0",
-  "Description": "Adds ambient loon calls in spring/summer/fall between 6pm and midnight.",
-  "UniqueID": "DiggBingus.LoonCallsMod",
+  "Author": "Graham Nelson",
+  "Version": "1.0.1",
+  "Description": "Adds ambient loon calls which play at random intervals",
+  "UniqueID": "GrahamNelson.LoonCallsMod",
   "EntryDll": "LoonCallsMod.dll",
   "MinimumApiVersion": "4.0.0",
   "UpdateKeys": []

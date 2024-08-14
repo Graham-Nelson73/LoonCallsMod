@@ -13,33 +13,31 @@ namespace LoonCallsMod
 {
     internal class SoundCue
     {
-        Mod Mod;
-        int LastCallTime;
-        List<string> CueNames;
-        Random rng;
-
-        const int CALL_START_TIME = 1800;//6:00 pm
-        const int CALL_END_TIME = 2400;//12:00 am
-        const int CALL_ODDS = 3;//1 in CALL_ODDS chance that call will be cued
-        const int MIN_CALL_INTERVAL = 10;//Minimum number of minutes between calls
+        private Mod Mod;
+        private Configuration Configuration;
+        private int LastCallTime = 600;
+        private int? LastCallIndex = null;
+        private List<string> CueNames;
+        private Random rng;
 
         public SoundCue(Mod mod)
         {
             Mod = mod;
             rng = new Random();
-            LastCallTime = 600;
-            CueNames = new List<string>();
+            Configuration = mod.Helper.ReadConfig<Configuration>();
+            LogMessage("Config Loaded");
+            CueNames = new List<string>(); 
             BuildAudioCues();
         }
 
         public void CheckforLoonCue(int time) {
             var location = Game1.currentLocation;
-            if (time >= CALL_START_TIME && time <= CALL_END_TIME &&
+            if (IsGameInCueTime(time) &&
                 IsPlayerInCueLocation(location) &&
                 IsPlayerInCueSeason())
             {
-                var rand = rng.Next(1, CALL_ODDS + 1);
-                if (rand == 1 && time - LastCallTime > MIN_CALL_INTERVAL)
+                var rand = rng.Next(1, Configuration.CallOdds + 1);
+                if (rand == 1 && time - LastCallTime >= Configuration.MinimumCallInterval)
                 {
                     CueLoonCall(location);
                     LastCallTime = time;
@@ -51,7 +49,14 @@ namespace LoonCallsMod
         private void CueLoonCall(GameLocation loc)
         {
             var rand = rng.Next(0, CueNames.Count);
+            if (LastCallIndex.HasValue && rand == LastCallIndex.Value)//Prevent same call from playing twice in a row, iterate index to next cue
+            {
+                rand = (rand + 1) % CueNames.Count;
+            }
+            
             string cueName = CueNames[rand];
+            LastCallIndex = rand;
+            LogMessage($"Cued sound {cueName}");
             Game1.playSound(cueName);
         }
 
@@ -76,6 +81,8 @@ namespace LoonCallsMod
                     sound.SetSound(audio, Game1.audioEngine.GetCategoryIndex("Ambient"), false, true);
                     Game1.soundBank.AddCue(sound);
                     CueNames.Add(sound.name);
+
+                    LogMessage($"Sound file {sound.name} loaded to soundbank");
                 }
             }
             catch (Exception ex)
@@ -94,7 +101,20 @@ namespace LoonCallsMod
 
         private bool IsPlayerInCueSeason()
         {
-            return Game1.currentSeason.ToLower() != "winter";
+            return !Configuration.RestrictedSeasons.Contains(Game1.currentSeason.ToLower());
+        }
+
+        private bool IsGameInCueTime(int time)
+        {
+            return time >= Configuration.CallStartTime && time <= Configuration.CallEndTime;
+        }
+
+        private void LogMessage(string mes)
+        {
+            if(Configuration.EnableDebugConsole)
+            {
+                Mod.Monitor.Log($"{mes}", LogLevel.Debug);
+            }
         }
     }
 }

@@ -16,8 +16,8 @@ namespace LoonCallsMod
         public override void Entry(IModHelper helper)
         {
             SoundCue = new SoundCue(this);
-            //only host player will track sound queues, will also want to add to menus at end of day
-            if (Context.IsMainPlayer) helper.Events.GameLoop.TimeChanged += this.OnTimeChange; 
+            helper.Events.GameLoop.TimeChanged += this.OnTimeChange; 
+            //TODO: add call cues during menu at end of day
         }
 
         private void OnTimeChange(object? sender, TimeChangedEventArgs e)
