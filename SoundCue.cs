@@ -50,10 +50,8 @@ namespace LoonCallsMod
         //Select random call from list of audio clips
         private void CueLoonCall(GameLocation loc)
         {
-            Mod.Monitor.Log($"{Game1.player.Name} cued Loon.", LogLevel.Debug);
             var rand = rng.Next(0, CueNames.Count);
             string cueName = CueNames[rand];
-            Mod.Monitor.Log($"Sound cue {cueName} triggered.", LogLevel.Debug);
             Game1.playSound(cueName);
         }
 
