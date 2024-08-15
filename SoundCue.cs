@@ -15,7 +15,7 @@ namespace LoonCallsMod
     {
         private Mod Mod;
         private Configuration Configuration;
-        private int LastCallTime = 600;
+        private int LastCallTime = 0;
         private int? LastCallIndex = null;
         private List<string> CueNames;
         private Random rng;
@@ -31,6 +31,8 @@ namespace LoonCallsMod
         }
 
         public void CheckforLoonCue(int time) {
+            if (time == 600) LastCallTime = 0;//reset last call time at start of each day
+
             var location = Game1.currentLocation;
             if (IsGameInCueTime(time) &&
                 IsPlayerInCueLocation(location) &&
@@ -48,16 +50,23 @@ namespace LoonCallsMod
         //Select random call from list of audio clips
         private void CueLoonCall(GameLocation loc)
         {
-            var rand = rng.Next(0, CueNames.Count);
-            if (LastCallIndex.HasValue && rand == LastCallIndex.Value)//Prevent same call from playing twice in a row, iterate index to next cue
+            try
             {
-                rand = (rand + 1) % CueNames.Count;
+                var rand = rng.Next(0, CueNames.Count);
+                if (LastCallIndex.HasValue && rand == LastCallIndex.Value)//Prevent same call from playing twice in a row, iterate index to next cue
+                {
+                    rand = (rand + 1) % CueNames.Count;
+                }
+
+                string cueName = CueNames[rand];
+                LastCallIndex = rand;
+                LogMessage($"Cued sound {cueName}");
+                Game1.playSound(cueName);
             }
-            
-            string cueName = CueNames[rand];
-            LastCallIndex = rand;
-            LogMessage($"Cued sound {cueName}");
-            Game1.playSound(cueName);
+            catch (Exception ex)
+            {
+                LogMessage($"Sound cue playback failed with exception: {ex.Message}");
+            }
         }
 
         //Add sounds from asset folder to game's sound bank
