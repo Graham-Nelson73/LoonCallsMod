@@ -6,7 +6,9 @@
 
 SMAPI version 4.0 or higher is required to install and run the Loon Calls Mod.
 
-- **[Download Mod Files Here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FGraham-Nelson73%2FLoonCallsMod%2Ftree%2Fmain%2FMod&filename=LoonCallsModRelease)**
+- **[Download Mod via Github](https://github.com/Graham-Nelson73/LoonCallsMod/releases/tag/1.0.3)**
+  
+- **[Download Mod via NexusMods](https://www.nexusmods.com/stardewvalley/mods/27045/)**
 
 - Once downloaded, extract zip files and copy the LoonCallsMod folder into your SMAPI mods folder at *..\Steam\steamapps\common\Stardew Valley\Mods*
 
