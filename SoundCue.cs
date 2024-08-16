@@ -16,7 +16,8 @@ namespace LoonCallsMod
         private Mod Mod;
         private Configuration Configuration;
         private int LastCallTime = 0;
-        private int? LastCallIndex = null;
+        private int LastCallIndex = -1;
+        private int ChecksSinceLastCall = 0;
         private List<string> CueNames;
         private Random rng;
 
@@ -31,20 +32,36 @@ namespace LoonCallsMod
         }
 
         public void CheckforLoonCue(int time) {
-            if (time == 600) LastCallTime = 0;//reset last call time at start of each day
-
-            var location = Game1.currentLocation;
-            if (IsGameInCueTime(time) &&
-                IsPlayerInCueLocation(location) &&
-                IsPlayerInCueSeason())
+            try
             {
-                var rand = rng.Next(0, Configuration.CallOdds);
-                if (rand == 0 && time - LastCallTime >= Configuration.MinimumCallInterval)
+                var location = Game1.currentLocation;
+                ChecksSinceLastCall++;
+
+                if (IsGameInCueTime(time) &&
+                    IsPlayerInCueLocation(location) &&
+                    IsPlayerInCueSeason())
                 {
-                    CueLoonCall(location);
-                    LastCallTime = time;
+                    var rand = rng.Next(0, Configuration.CallOdds);
+                    if (rand == 0 && ChecksSinceLastCall >= (Configuration.MinimumCallInterval / 10))
+                    {
+                        CueLoonCall(location);
+                        LastCallTime = time;
+                        ChecksSinceLastCall = 0;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                LogMessage($"Checking for sound cue failed with exception: {ex.Message}");
+            }
+        }
+
+        //reset last call time at end of day
+        public void DayEnded()
+        {
+            LastCallTime = 0;
+            ChecksSinceLastCall = 0;
+            LogMessage("Day Ended");
         }
 
         //Select random call from list of audio clips
@@ -53,7 +70,7 @@ namespace LoonCallsMod
             try
             {
                 var rand = rng.Next(0, CueNames.Count);
-                if (LastCallIndex.HasValue && rand == LastCallIndex.Value)//Prevent same call from playing twice in a row, iterate index to next cue
+                if (rand == LastCallIndex)//Prevent same call from playing twice in a row, iterate index to next cue
                 {
                     rand = (rand + 1) % CueNames.Count;
                 }
@@ -96,7 +113,7 @@ namespace LoonCallsMod
             }
             catch (Exception ex)
             {
-                Mod.Monitor.Log($"Building sound cues failed with exception: {ex.Message}", LogLevel.Debug);
+                LogMessage($"Building sound cues failed with exception: {ex.Message}");
             }
         }
 
