@@ -1,7 +1,7 @@
 {
   "Name": "LoonCallsMod",
   "Author": "Graham Nelson",
-  "Version": "1.0.2",
+  "Version": "1.0.3",
   "Description": "Adds ambient loon calls which play at random intervals",
   "UniqueID": "GrahamNelson.LoonCallsMod",
   "EntryDll": "LoonCallsMod.dll",
