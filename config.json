@@ -1,8 +1,0 @@
-{
-  "CallStartTime": 1800, //24h time calls will begin triggering
-  "CallEndTime": 2400, //24h time calls will stop triggering
-  "CallOdds": 3,//At each trigger, there is a 1 in <CallOdds> chance that the call will play
-  "MinimumCallInterval": 20,//Minimum time between calls, in 10 game minute intervals
-  "RestrictedSeasons": [ "winter" ],//Seasons when calls will not be triggered (all lowercase)
-  "EnableDebugConsole": true //if debug information will be printed to console
-}
