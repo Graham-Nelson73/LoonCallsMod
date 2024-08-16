@@ -1,10 +1,10 @@
 {
   "Name": "LoonCallsMod",
   "Author": "Graham Nelson",
-  "Version": "1.0.4",
+  "Version": "1.0.5",
   "Description": "Adds ambient loon calls which play at random intervals",
   "UniqueID": "GrahamNelson.LoonCallsMod",
   "EntryDll": "LoonCallsMod.dll",
   "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": [ "GitHub:Graham-Nelson73/LoonCallsMod", "Nexus:27045" ]
+  "UpdateKeys": [ "Nexus:27045", "GitHub:Graham-Nelson73/LoonCallsMod" ]
 }
